@@ -14,6 +14,7 @@ RSpec.configure do |config|
     DB.exec("TRUNCATE TABLE authors RESTART IDENTITY;")
     DB.exec("TRUNCATE TABLE books RESTART IDENTITY;")
     DB.exec("TRUNCATE TABLE patrons RESTART IDENTITY;")
+    DB.exec("TRUNCATE TABLE catalog RESTART IDENTITY;")
   end
 end
 

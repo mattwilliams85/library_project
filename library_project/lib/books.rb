@@ -23,6 +23,15 @@ class Book
     @id = result.first['id'].to_i
   end
 
+  def self.find(name)
+    Book.all.each do |book|
+      if book.name == name
+        @result = book
+      end
+    end
+    @result
+  end
+
   def ==(other_book)
     self.name == other_book.name && self.id == other_book.id
   end

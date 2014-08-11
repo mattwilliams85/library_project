@@ -47,6 +47,16 @@ describe 'Patron' do
       expect(Patron.all.length).to eq 1
     end
   end
+
+  describe "update" do
+    it "should update the information of an exisiting patron" do
+      create_var
+      expect(@patron1.name).to eq ("Matt")
+      @patron1.update("Satt")
+      expect(@patron1.name).to eq ("Satt")
+      expect(Patron.find('Satt')).to eq @patron1
+    end
+  end
 end
 
 

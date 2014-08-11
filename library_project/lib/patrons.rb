@@ -36,6 +36,11 @@ class Patron
     DB.exec("DELETE FROM patrons WHERE name = '#{@name}'")
   end
 
+  def update(new_name)
+    DB.exec("UPDATE patrons SET name = '#{new_name}' WHERE name = '#{@name}';")
+    @name = new_name
+  end
+
   def ==(other_patron)
     self.name == other_patron.name && self.id == other_patron.id
   end
